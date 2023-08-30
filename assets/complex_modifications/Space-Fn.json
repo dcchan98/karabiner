@@ -419,7 +419,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "open -a 'Terminal'"
+                            "shell_command": "open -a 'ITerm'"
                         }
                     ],
                     "type": "basic"
