@@ -5,7 +5,7 @@
             "manipulators": [
                 {
                     "from": {
-                        "key_code": "spacebar",
+                        "key_code": "right_command",
                         "modifiers": {
                             "optional": [
                                 "any"
@@ -30,7 +30,7 @@
                     ],
                     "to_if_alone": [
                         {
-                            "key_code": "spacebar"
+                            "key_code": "right_command"
                         }
                     ],
                     "type": "basic"
