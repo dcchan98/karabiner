@@ -55,37 +55,6 @@
                         ]
                     },
                     {
-                        "description": "Space+. -> Ctrl+space (change input source)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "SpaceFN (Open): Space+f/g/t/n/z/c/a => launch Downloads/Chrome/Terminal/VSCode/Zoom/Feishu/Music/GPT",
                         "manipulators": [
                             {
