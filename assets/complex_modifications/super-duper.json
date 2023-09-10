@@ -288,10 +288,11 @@
                     },
                     "to": [
                         {
-                            "key_code": "open_bracket",
+                            "key_code": "left_arrow",
                             "modifiers": [
                                 "left_command",
-                                "left_shift"
+                                "left_option"
+
                             ]
                         }
                     ],
@@ -320,10 +321,10 @@
                     },
                     "to": [
                         {
-                            "key_code": "close_bracket",
+                            "key_code": "right_arrow",
                             "modifiers": [
                                 "left_command",
-                                "left_shift"
+                                "left_option"
                             ]
                         }
                     ],
