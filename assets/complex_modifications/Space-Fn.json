@@ -38,7 +38,7 @@
             ]
         },
         {
-            "description": "SpaceFN (Open): Space+f/g/t/n/z/c/a => launch Downloads/Chrome/Terminal/VSCode/Zoom/Feishu/Music/GPT",
+            "description": "SpaceFN (Open): Space+f/g/t/n/z/c/a/t => launch Downloads/Chrome/Terminal/VSCode/Zoom/Feishu/Music/GPT/Things",
             "manipulators": [
                 {
                     "conditions": [
@@ -196,7 +196,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "open -a 'YouTube Music Desktop App'"
+                            "shell_command": "open -a 'YouTube Music'"
                         }
                     ],
                     "type": "basic"
@@ -220,6 +220,29 @@
                     "to": [
                         {
                             "shell_command": "open -a 'ChatGPT'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "spacefn_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "open -a 'Things3'"
                         }
                     ],
                     "type": "basic"
