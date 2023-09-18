@@ -38,8 +38,31 @@
             ]
         },
         {
-            "description": "SpaceFN (Open): Space+f/g/t/n/z/c/a/t => launch Downloads/Chrome/Terminal/VSCode/Zoom/Feishu/Music/GPT/Things",
+            "description": "SpaceFN (Open): Space+q/f/g/t/n/z/c/a/t => launch Quicktime/Downloads/Chrome/Terminal/VSCode/Zoom/Feishu/Music/GPT/Things",
             "manipulators": [
+                {
+                    "conditions": [
+                        {
+                            "name": "spacefn_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "q",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "open -a 'QuickTime Player'"
+                        }
+                    ],
+                    "type": "basic"
+                },
                 {
                     "conditions": [
                         {
