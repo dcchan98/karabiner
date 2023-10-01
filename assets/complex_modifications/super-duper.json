@@ -237,7 +237,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + U -> First Tab",
+            "description": "(S)uper(D)uper + U -> Prev Desktop",
             "manipulators": [
                 {
                     "conditions": [
@@ -257,9 +257,9 @@
                     },
                     "to": [
                         {
-                            "key_code": "1",
+                            "key_code": "left_arrow",
                             "modifiers": [
-                                "left_command"
+                                "control"
                             ]
                         }
                     ],
@@ -333,7 +333,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + P -> Last Tab",
+            "description": "(S)uper(D)uper + P -> Next Desktop",
             "manipulators": [
                 {
                     "conditions": [
@@ -353,9 +353,9 @@
                     },
                     "to": [
                         {
-                            "key_code": "9",
+                            "key_code": "right_arrow",
                             "modifiers": [
-                                "left_command"
+                                "control"
                             ]
                         }
                     ],
