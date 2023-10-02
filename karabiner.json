@@ -440,7 +440,7 @@
                         ]
                     },
                     {
-                        "description": "SpaceFN (Open): Space+q/f/g/s/d/c/a/l => launch Quicktime/Downloads/Chrome/Terminal/VSCode/Feishu/Music/GPT/Things",
+                        "description": "SpaceFN (Open): Space+q/g/s/d/f/a/l => launch Quicktime/Chrome/Terminal/VSCode/Feishu/Music/GPT/Things",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -461,29 +461,6 @@
                                 "to": [
                                     {
                                         "shell_command": "open -a 'QuickTime Player'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open ~/Downloads "
                                     }
                                 ],
                                 "type": "basic"
@@ -566,7 +543,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "c",
+                                    "key_code": "f",
                                     "modifiers": {
                                         "optional": [
                                             "any"
