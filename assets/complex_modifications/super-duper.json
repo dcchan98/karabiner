@@ -153,7 +153,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + A -> Option",
+            "description": "(S)uper(D)uper + F -> Option",
             "manipulators": [
                 {
                     "conditions": [
@@ -164,7 +164,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "a",
+                        "key_code": "f",
                         "modifiers": {
                             "optional": [
                                 "any"
@@ -181,7 +181,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + F -> Command",
+            "description": "(S)uper(D)uper + A -> Command",
             "manipulators": [
                 {
                     "conditions": [
@@ -192,7 +192,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "f",
+                        "key_code": "a",
                         "modifiers": {
                             "optional": [
                                 "any"
