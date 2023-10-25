@@ -552,11 +552,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "k",
-                                        "modifiers": [
-                                            "left_command",
-                                            "shift"
-                                        ]
+                                        "shell_command": "open -a 'LarkSuite.app'"
                                     }
                                 ],
                                 "type": "basic"
