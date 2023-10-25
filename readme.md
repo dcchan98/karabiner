@@ -39,7 +39,7 @@ original > use
 }
 ```
 
-the current version opens larksuite in global search. To set this up in lark
+the current version doubles as launcher and global search toggle. To set this up in lark
 1. Go to lark > settings shortcut
 2. Change Quick Search to ⌘ + shift + a
 3. Change to use global shortcut
