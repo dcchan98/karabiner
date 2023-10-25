@@ -22,7 +22,7 @@ Can be done by pressing right ⌘ + any keys
 ### Set up and tweaks
 
 #### Chat gpt ( right ⌘ + A )
-TODO DC
+
+Settings > More tools > Create shortcut > Move from chrome apps to application (or set the path to use chrome app)
 
 #### ( right ⌘ + f )
-TODO DC
