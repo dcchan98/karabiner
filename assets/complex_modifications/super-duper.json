@@ -153,7 +153,63 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + Space -> Option",
+            "description": "(S)uper(D)uper + F -> Option",
+            "manipulators": [
+                {
+                    "conditions": [
+                        {
+                            "name": "superduper-mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_option"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "(S)uper(D)uper + A -> Command",
+            "manipulators": [
+                {
+                    "conditions": [
+                        {
+                            "name": "superduper-mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_command"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "(S)uper(D)uper + Space -> Shift",
             "manipulators": [
                 {
                     "conditions": [
@@ -173,7 +229,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "left_option"
+                            "key_code": "right_shift"
                         }
                     ],
                     "type": "basic"
@@ -181,7 +237,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + A -> Prev Desktop",
+            "description": "(S)uper(D)uper + U -> Prev Desktop",
             "manipulators": [
                 {
                     "conditions": [
@@ -192,7 +248,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "a",
+                        "key_code": "u",
                         "modifiers": {
                             "optional": [
                                 "any"
@@ -277,7 +333,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + F -> Next Desktop",
+            "description": "(S)uper(D)uper + P -> Next Desktop",
             "manipulators": [
                 {
                     "conditions": [
@@ -288,7 +344,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "f",
+                        "key_code": "p",
                         "modifiers": {
                             "optional": [
                                 "any"
