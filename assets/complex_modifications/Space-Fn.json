@@ -127,7 +127,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "open -a 'IntelliJ IDEA Ultimate'"
+                            "shell_command": "open -a 'Goland'"
                         }
                     ],
                     "type": "basic"
@@ -196,30 +196,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "open -a 'ChatGPT'"
-                        }
-                    ],
-                    "type": "basic"
-                },
-                {
-                    "conditions": [
-                        {
-                            "name": "spacefn_mode",
-                            "type": "variable_if",
-                            "value": 1
-                        }
-                    ],
-                    "from": {
-                        "key_code": "b",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "shell_command": "open -a 'Goland'"
+                            "shell_command": "open -a 'ChatGPT_OG'"
                         }
                     ],
                     "type": "basic"
