@@ -237,7 +237,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + U -> Prev Desktop",
+            "description": "(S)uper(D)uper + C -> Prev Desktop",
             "manipulators": [
                 {
                     "conditions": [
@@ -248,7 +248,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "u",
+                        "key_code": "c",
                         "modifiers": {
                             "optional": [
                                 "any"
@@ -333,7 +333,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + P -> Next Desktop",
+            "description": "(S)uper(D)uper + V -> Next Desktop",
             "manipulators": [
                 {
                     "conditions": [
@@ -344,7 +344,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "p",
+                        "key_code": "v",
                         "modifiers": {
                             "optional": [
                                 "any"
