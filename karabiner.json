@@ -18,300 +18,6 @@
                 },
                 "rules": [
                     {
-                        "description": "SpaceFN (Open): Space+q/g/s/d/f/a/l => launch Quicktime/Chrome/Terminal/VSCode/Feishu/Music/GPT/Things",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'QuickTime Player'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "g",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Google Chrome'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'ITerm'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'IntelliJ IDEA Ultimate'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'LarkSuite.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'YouTube Music'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'ChatGPT'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Goland'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Visual Studio Code'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'WebStorm'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Obsidian'"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "SpaceFN: Space enables SpaceFN mode (see: https://geekhack.org/index.php?topic=51069.0)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": {
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "spacefn_mode",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "spacefn_mode",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "right_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[xjm] jk simultaneous to esc",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "j"
-                                        },
-                                        {
-                                            "key_code": "k"
-                                        }
-                                    ]
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "S+D -> (S)uper(D)uper Mode",
                         "manipulators": [
                             {
@@ -365,7 +71,9 @@
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -391,7 +99,9 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -417,7 +127,9 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -443,7 +155,9 @@
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -469,7 +183,9 @@
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -495,7 +211,9 @@
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -521,7 +239,9 @@
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -547,13 +267,17 @@
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -574,7 +298,9 @@
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -604,7 +330,9 @@
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -634,13 +362,17 @@
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -661,13 +393,421 @@
                                 "from": {
                                     "key_code": "g",
                                     "modifiers": {
-                                        "optional": ["any"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "up_arrow",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "S+D -> (S)uper(D)uper Mode",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "s"
+                                        },
+                                        {
+                                            "key_code": "d"
+                                        }
+                                    ],
+                                    "simultaneous_options": {
+                                        "detect_key_down_uninterruptedly": true,
+                                        "key_down_order": "insensitive",
+                                        "key_up_order": "insensitive",
+                                        "key_up_when": "any",
+                                        "to_after_key_up": [
+                                            {
+                                                "set_variable": {
+                                                    "name": "superduper-mode",
+                                                    "value": 0
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "superduper-mode",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps Lock → Escape if tapped, Right Command if held (only on custom keyboard)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 641,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_command",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Right Command + Delete deletes word instead of line",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "SpaceFN: Space enables SpaceFN mode (see: https://geekhack.org/index.php?topic=51069.0)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "spacefn_mode",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "key_code": "left_command",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "spacefn_mode",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "SpaceFN (Open): Space+q/g/s/d/f/a/l => launch Quicktime/Chrome/Terminal/VSCode/Feishu/Music/GPT/Things",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'QuickTime Player'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Google Chrome'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'ITerm'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'IntelliJ IDEA Ultimate'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'LarkSuite.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'YouTube Music'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'ChatGPT'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Goland'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Visual Studio Code'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'CLion'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "spacefn_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Obsidian'"
                                     }
                                 ],
                                 "type": "basic"
@@ -907,6 +1047,72 @@
                         "is_pointing_device": true,
                         "product_id": 33,
                         "vendor_id": 13807
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 641,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 641,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": true,
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 2832,
+                        "vendor_id": 13364
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,

@@ -1,0 +1,26 @@
+{
+  "title": "Right Command + Delete deletes word instead of line",
+  "rules": [
+    {
+      "description": "Map Right Command + Delete to Option + Delete",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "delete_or_backspace",
+            "modifiers": {
+              "mandatory": ["right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": ["option"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

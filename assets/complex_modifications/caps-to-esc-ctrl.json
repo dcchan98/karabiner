@@ -1,0 +1,41 @@
+{
+  "title": "Caps Lock → Escape on tap, Right Command on hold (Only for mac keyboard)",
+  "rules": [
+    {
+      "description": "Caps Lock → Escape if tapped, Right Command if held (only on custom keyboard)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_command",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452,
+                  "product_id": 641
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
