@@ -288,11 +288,10 @@
                     },
                     "to": [
                         {
-                            "key_code": "left_arrow",
+                            "key_code": "tab",
                             "modifiers": [
-                                "left_command",
-                                "left_option"
-
+                                "left_control",
+                                "left_shift"
                             ]
                         }
                     ],
@@ -321,10 +320,9 @@
                     },
                     "to": [
                         {
-                            "key_code": "right_arrow",
+                            "key_code": "tab",
                             "modifiers": [
-                                "left_command",
-                                "left_option"
+                                "left_control"
                             ]
                         }
                     ],

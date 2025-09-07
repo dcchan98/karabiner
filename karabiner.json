@@ -18,6 +18,69 @@
                 },
                 "rules": [
                     {
+                        "description": "(S)uper(D)uper + O -> Next Tab",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "(S)uper(D)uper + I -> Prev Tab",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "S+D -> (S)uper(D)uper Mode",
                         "manipulators": [
                             {
@@ -277,70 +340,6 @@
                                         "key_code": "left_arrow",
                                         "modifiers": [
                                             "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + I -> Prev Tab",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + O -> Next Tab",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_option"
                                         ]
                                     }
                                 ],
