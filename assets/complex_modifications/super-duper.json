@@ -1,4 +1,5 @@
 {
+    "title": "SuperDuper",
     "rules": [
         {
             "description": "S+D -> (S)uper(D)uper Mode",
@@ -41,7 +42,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + H -> Left",
+            "description": "(S)uper(D)uper + HJKL -> Arrows",
             "manipulators": [
                 {
                     "conditions": [
@@ -65,12 +66,7 @@
                         }
                     ],
                     "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + J -> Down",
-            "manipulators": [
+                },
                 {
                     "conditions": [
                         {
@@ -93,12 +89,7 @@
                         }
                     ],
                     "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + K -> Up",
-            "manipulators": [
+                },
                 {
                     "conditions": [
                         {
@@ -121,12 +112,7 @@
                         }
                     ],
                     "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + L -> Right",
-            "manipulators": [
+                },
                 {
                     "conditions": [
                         {
@@ -153,122 +139,7 @@
             ]
         },
         {
-            "description": "(S)uper(D)uper + F -> Option",
-            "manipulators": [
-                {
-                    "conditions": [
-                        {
-                            "name": "superduper-mode",
-                            "type": "variable_if",
-                            "value": 1
-                        }
-                    ],
-                    "from": {
-                        "key_code": "f",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_option"
-                        }
-                    ],
-                    "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + A -> Command",
-            "manipulators": [
-                {
-                    "conditions": [
-                        {
-                            "name": "superduper-mode",
-                            "type": "variable_if",
-                            "value": 1
-                        }
-                    ],
-                    "from": {
-                        "key_code": "a",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "right_command"
-                        }
-                    ],
-                    "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + Space -> Shift",
-            "manipulators": [
-                {
-                    "conditions": [
-                        {
-                            "name": "superduper-mode",
-                            "type": "variable_if",
-                            "value": 1
-                        }
-                    ],
-                    "from": {
-                        "key_code": "spacebar",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "right_shift"
-                        }
-                    ],
-                    "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + C -> Prev Desktop",
-            "manipulators": [
-                {
-                    "conditions": [
-                        {
-                            "name": "superduper-mode",
-                            "type": "variable_if",
-                            "value": 1
-                        }
-                    ],
-                    "from": {
-                        "key_code": "c",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_arrow",
-                            "modifiers": [
-                                "control"
-                            ]
-                        }
-                    ],
-                    "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + I -> Prev Tab",
+            "description": "(S)uper(D)uper + I/O -> Tab Switching",
             "manipulators": [
                 {
                     "conditions": [
@@ -296,12 +167,7 @@
                         }
                     ],
                     "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + O -> Next Tab",
-            "manipulators": [
+                },
                 {
                     "conditions": [
                         {
@@ -329,69 +195,6 @@
                     "type": "basic"
                 }
             ]
-        },
-        {
-            "description": "(S)uper(D)uper + V -> Next Desktop",
-            "manipulators": [
-                {
-                    "conditions": [
-                        {
-                            "name": "superduper-mode",
-                            "type": "variable_if",
-                            "value": 1
-                        }
-                    ],
-                    "from": {
-                        "key_code": "v",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "right_arrow",
-                            "modifiers": [
-                                "control"
-                            ]
-                        }
-                    ],
-                    "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "(S)uper(D)uper + G -> Mission Control",
-            "manipulators": [
-                {
-                    "conditions": [
-                        {
-                            "name": "superduper-mode",
-                            "type": "variable_if",
-                            "value": 1
-                        }
-                    ],
-                    "from": {
-                        "key_code": "g",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "up_arrow",
-                            "modifiers": [
-                                "control"
-                            ]
-                        }
-                    ],
-                    "type": "basic"
-                }
-            ]
         }
-    ],
-    "title": "SuperDuper"
+    ]
 }

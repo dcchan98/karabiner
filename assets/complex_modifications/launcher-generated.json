@@ -1,0 +1,258 @@
+{
+    "title": "Launcher",
+    "rules": [
+        {
+            "description": "Launcher: Left Command enables Launcher mode",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "left_command",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "Launcher_mode",
+                                "value": 1
+                            }
+                        },
+                        {
+                            "key_code": "left_command",
+                            "lazy": true
+                        }
+                    ],
+                    "to_after_key_up": [
+                        {
+                            "set_variable": {
+                                "name": "Launcher_mode",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "left_command"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Launcher (Open): press keys to launch apps",
+            "manipulators": [
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "d",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"CLion\" then' -e 'tell application process \"CLion\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"CLion\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Visual Studio Code\" then' -e 'tell application process \"Visual Studio Code\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Visual Studio Code\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "e",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Gmail.app\" then' -e 'tell application process \"Gmail.app\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Gmail.app\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Telegram.app\" then' -e 'tell application process \"Telegram.app\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Telegram.app\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"ChatGPT\" then' -e 'tell application process \"ChatGPT\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"ChatGPT\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"YouTube Music\" then' -e 'tell application process \"YouTube Music\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"YouTube Music\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "s",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"iTerm\" then' -e 'tell application process \"iTerm\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"iTerm\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "g",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Google Chrome\" then' -e 'tell application process \"Google Chrome\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Google Chrome\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "Launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Obsidian\" then' -e 'tell application process \"Obsidian\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Obsidian\\\"\"' -e 'end if' -e 'end tell'"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}

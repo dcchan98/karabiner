@@ -18,8 +18,452 @@
                 },
                 "rules": [
                     {
-                        "description": "(S)uper(D)uper + O -> Next Tab",
+                        "description": "Map Right Command + Delete to Option + Delete",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Launcher: Left Command enables Launcher mode",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "Launcher_mode",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "key_code": "left_command",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "Launcher_mode",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Launcher (Open): press keys to launch apps",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"CLion\" then' -e 'tell application process \"CLion\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"CLion\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Visual Studio Code\" then' -e 'tell application process \"Visual Studio Code\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Visual Studio Code\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Gmail.app\" then' -e 'tell application process \"Gmail.app\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Gmail.app\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Telegram.app\" then' -e 'tell application process \"Telegram.app\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Telegram.app\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"ChatGPT\" then' -e 'tell application process \"ChatGPT\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"ChatGPT\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"YouTube Music\" then' -e 'tell application process \"YouTube Music\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"YouTube Music\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"iTerm\" then' -e 'tell application process \"iTerm\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"iTerm\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Google Chrome\" then' -e 'tell application process \"Google Chrome\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Google Chrome\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "Launcher_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Obsidian\" then' -e 'tell application process \"Obsidian\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Obsidian\\\"\"' -e 'end if' -e 'end tell'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "S+D -> (S)uper(D)uper Mode",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "s"
+                                        },
+                                        {
+                                            "key_code": "d"
+                                        }
+                                    ],
+                                    "simultaneous_options": {
+                                        "detect_key_down_uninterruptedly": true,
+                                        "key_down_order": "insensitive",
+                                        "key_up_order": "insensitive",
+                                        "key_up_when": "any",
+                                        "to_after_key_up": [
+                                            {
+                                                "set_variable": {
+                                                    "name": "superduper-mode",
+                                                    "value": 0
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "superduper-mode",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "(S)uper(D)uper + HJKL -> Arrows",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "(S)uper(D)uper + I/O -> Tab Switching",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "conditions": [
                                     {
@@ -49,421 +493,9 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + I -> Prev Tab",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "S+D -> (S)uper(D)uper Mode",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "s"
-                                        },
-                                        {
-                                            "key_code": "d"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "detect_key_down_uninterruptedly": true,
-                                        "key_down_order": "insensitive",
-                                        "key_up_order": "insensitive",
-                                        "key_up_when": "any",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "superduper-mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "superduper-mode",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + H -> Left",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + J -> Down",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + K -> Up",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + L -> Right",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + F -> Option",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_option"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + A -> Command",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + Space -> Shift",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + C -> Prev Desktop",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + V -> Next Desktop",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(S)uper(D)uper + G -> Mission Control",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "g",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "S+D -> (S)uper(D)uper Mode",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "s"
-                                        },
-                                        {
-                                            "key_code": "d"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "detect_key_down_uninterruptedly": true,
-                                        "key_down_order": "insensitive",
-                                        "key_up_order": "insensitive",
-                                        "key_up_when": "any",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "superduper-mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "superduper-mode",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Caps Lock → Escape if tapped, Right Command if held (only on custom keyboard)",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 641,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -481,332 +513,6 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Right Command + Delete deletes word instead of line",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "SpaceFN: Space enables SpaceFN mode (see: https://geekhack.org/index.php?topic=51069.0)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_command",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "spacefn_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "left_command",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "spacefn_mode",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "SpaceFN (Open): Space+q/g/s/d/f/a/l => launch Quicktime/Chrome/Terminal/VSCode/Feishu/Music/GPT/Things",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'QuickTime Player'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "g",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Google Chrome'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'ITerm'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'IntelliJ IDEA Ultimate'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'LarkSuite.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'YouTube Music'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'ChatGPT'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Goland'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Visual Studio Code'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'CLion'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "spacefn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Obsidian'"
                                     }
                                 ],
                                 "type": "basic"
