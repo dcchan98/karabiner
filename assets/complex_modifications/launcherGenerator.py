@@ -12,28 +12,25 @@ fileName = 'launcher-generated.json'
 launcherItems = [
     # Code editors
     LauncherItem("d", "CLion"),
-    # LauncherItem("b", "IntelliJ IDEA Ultimate"),
-    LauncherItem("v", "Visual Studio Code"), # Try not to change this
+    LauncherItem("v", "Visual Studio Code"),
 
     # Chat and Email
     LauncherItem("e", "Gmail.app"), 
     LauncherItem("c", "Telegram.app"), 
 
     LauncherItem("a", "ChatGPT"),
-
     LauncherItem("m","YouTube Music"),
     LauncherItem("s", "iTerm"),
     LauncherItem("g", "Google Chrome"),
     LauncherItem("l", "Obsidian"),
 ]
-# endregion : 
+# endregion
 
 # ------------------------------
 # Helper: generate shell command for a launcher item
 # ------------------------------
 def create_shell_command(item: LauncherItem) -> str:
     if item.hideIfOpen:
-        # Toggle logic using AppleScript
         return (
             f"osascript -e 'tell application \"System Events\"' "
             f"-e 'if (name of first application process whose frontmost is true) "
@@ -45,9 +42,7 @@ def create_shell_command(item: LauncherItem) -> str:
             f"-e 'end tell'"
         )
     else:
-        # Just open the app
         return f"open -a '{item.applicationName}'"
-
 
 # ------------------------------
 # Generate manipulators from launcher items
@@ -56,18 +51,18 @@ manipulators = []
 for item in launcherItems:
     manipulators.append({
         "conditions": [
-            {"name": "Launcher_mode", "type": "variable_if", "value": 1}
+            {"name": "launcher_mode", "type": "variable_if", "value": 1}
         ],
         "from": {
             "key_code": item.keyStroke,
             "modifiers": {"optional": ["any"]}
         },
         "to": [
-            {"shell_command": create_shell_command(item)}
+            {"shell_command": create_shell_command(item)},
+            {"set_variable": {"name": "launcher_mode", "value": 0}}
         ],
         "type": "basic"
     })
-
 
 # ------------------------------
 # Full Karabiner JSON structure
@@ -76,22 +71,40 @@ karabiner_json = {
     "title": "Launcher",
     "rules": [
         {
-            "description": "Launcher: Left Command enables Launcher mode",
+            "description": "Double-tap Left Command to set Launcher mode",
             "manipulators": [
                 {
+                    "type": "basic",
                     "from": {
                         "key_code": "left_command",
                         "modifiers": {"optional": ["any"]}
                     },
                     "to": [
-                        {"set_variable": {"name": "Launcher_mode", "value": 1}},
-                        {"key_code": "left_command", "lazy": True}
+                        {"set_variable": {"name": "launcher_mode", "value": 1}}
                     ],
-                    "to_after_key_up": [
-                        {"set_variable": {"name": "Launcher_mode", "value": 0}}
+                    "conditions": [
+                        {"type": "variable_if", "name": "key_pressed", "value": 1}
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_command",
+                        "modifiers": {"optional": ["any"]}
+                    },
+                    "to": [
+                        {"set_variable": {"name": "key_pressed", "value": 1}},
+                        {"key_code": "left_command"}
                     ],
-                    "to_if_alone": [{"key_code": "left_command"}],
-                    "type": "basic"
+                    "description": "to_delayed_action is set to 400ms in karabiner.json",
+                    "to_delayed_action": {
+                        "to_if_invoked": [
+                            {"set_variable": {"name": "key_pressed", "value": 0}}
+                        ],
+                        "to_if_canceled": [
+                            {"set_variable": {"name": "key_pressed", "value": 0}}
+                        ]
+                    }
                 }
             ]
         },
@@ -102,9 +115,8 @@ karabiner_json = {
     ]
 }
 
-
 # ------------------------------
-# Write JSON to file in script's directory
+# Write JSON to file
 # ------------------------------
 script_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir, fileName)
