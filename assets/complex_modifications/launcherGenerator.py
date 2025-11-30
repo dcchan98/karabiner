@@ -96,7 +96,7 @@ karabiner_json = {
                         {"set_variable": {"name": "key_pressed", "value": 1}},
                         {"key_code": "left_command"}
                     ],
-                    "description": "to_delayed_action is set to 400ms in karabiner.json",
+                    "description": "to_delayed_action is set to 5000 in karabiner.json",
                     "to_delayed_action": {
                         "to_if_invoked": [
                             {"set_variable": {"name": "key_pressed", "value": 0}}
