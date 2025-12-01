@@ -143,6 +143,35 @@
                         }
                     ],
                     "from": {
+                        "key_code": "t",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"System Events\"' -e 'if (name of first application process whose frontmost is true) is \"Things3\" then' -e 'tell application process \"Things3\" to set visible to false' -e 'else' -e 'do shell script \"open -a \\\"Things3\\\"\"' -e 'end if' -e 'end tell'"
+                        },
+                        {
+                            "set_variable": {
+                                "name": "launcher_mode",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "launcher_mode",
+                            "type": "variable_if",
+                            "value": 1
+                        }
+                    ],
+                    "from": {
                         "key_code": "e",
                         "modifiers": {
                             "optional": [

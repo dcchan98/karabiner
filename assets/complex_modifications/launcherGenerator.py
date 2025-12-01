@@ -13,6 +13,7 @@ launcherItems = [
     # Code editors
     LauncherItem("d", "CLion"),
     LauncherItem("v", "Visual Studio Code"),
+    LauncherItem("t", "Things3"),
 
     # Chat and Email
     LauncherItem("e", "Gmail.app"), 
