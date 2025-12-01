@@ -1,5 +1,5 @@
 {
-  "title": "Caps Lock → Escape on tap, Right Command on hold (Only for mac keyboard)",
+  "title": "Caps Lock → Escape on tap, Hyper on hold (Only for mac keyboard)",
   "rules": [
     {
       "description": "Caps Lock → Escape if tapped, Right Command if held (only on custom keyboard)",
@@ -9,12 +9,19 @@
           "from": {
             "key_code": "caps_lock",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
-              "key_code": "right_command",
+              "key_code": "left_shift",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_option"
+              ],
               "lazy": true
             }
           ],
