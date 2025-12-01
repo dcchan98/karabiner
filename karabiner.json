@@ -18,6 +18,22 @@
                 },
                 "rules": [
                     {
+                        "description": "Disable Right Command key",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "right_command"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "vk_none"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Map Left Command + Delete to Option + Delete",
                         "manipulators": [
                             {
