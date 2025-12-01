@@ -1,15 +1,15 @@
 {
-  "title": "Right Command + Delete deletes word instead of line",
+  "title": "Left Command + Delete deletes word instead of line",
   "rules": [
     {
-      "description": "Map Right Command + Delete to Option + Delete",
+      "description": "Map Left Command + Delete to Option + Delete",
       "manipulators": [
         {
           "type": "basic",
           "from": {
             "key_code": "delete_or_backspace",
             "modifiers": {
-              "mandatory": ["right_command"],
+              "mandatory": ["left_command"],
               "optional": ["any"]
             }
           },
