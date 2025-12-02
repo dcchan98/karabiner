@@ -18,20 +18,33 @@
                 },
                 "rules": [
                     {
+                        "description": "Shift + Caps Lock → Caps Lock",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Caps Lock → Escape if tapped, Right Command if held (only on custom keyboard)",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 641,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -54,33 +67,6 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Map Left Command + Delete to Option + Delete",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "option"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -121,6 +107,65 @@
                                             "name": "superduper-mode",
                                             "value": 1
                                         }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "(S)uper(D)uper + I/O -> Tab Switching",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "superduper-mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -225,19 +270,15 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + I/O -> Tab Switching",
+                        "description": "Map Left Command + Delete to Option + Delete",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "i",
+                                    "key_code": "delete_or_backspace",
                                     "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -245,36 +286,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "tab",
+                                        "key_code": "delete_or_backspace",
                                         "modifiers": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "superduper-mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control"
+                                            "option"
                                         ]
                                     }
                                 ],
